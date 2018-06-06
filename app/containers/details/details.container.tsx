@@ -2,8 +2,7 @@ import React from 'react'
 import { Component } from 'react';
 import DetailsComponent from './details.component';
 
-type Props = {};
-export default class DetailsContainer extends Component<Props> {
+export default class DetailsContainer extends Component<any> {
 
   static navigationOptions = {
     title: 'Details',
@@ -17,8 +16,11 @@ export default class DetailsContainer extends Component<Props> {
   };
 
   render() {
+    const { params } = this.props.navigation.state;
     return (
-      <DetailsComponent/>
+      <DetailsComponent
+        person={params.person}
+      />
     )
   }
 }

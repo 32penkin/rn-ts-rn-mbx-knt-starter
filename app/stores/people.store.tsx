@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx';
 import Person from '../models/models';
 
-export default class PeopleStore {
+class PeopleStore {
 
   @observable people: Person[] = [];
 
@@ -11,3 +11,5 @@ export default class PeopleStore {
   }
 
 }
+
+export const peopleStore = new PeopleStore();
