@@ -8,7 +8,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import {observer} from 'mobx';
-import { Person } from '../../models/models';
+import Person from '../../models/models';
 import PersonComponent from '../../components/person';
 
 interface HomeComponentProps {

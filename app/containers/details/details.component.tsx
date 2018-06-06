@@ -5,7 +5,7 @@ import {
   Text,
   View
 } from 'react-native';
-import { Person } from '../../models/models';
+import Person from '../../models/models';
 
 type Props = {
   person: Person;

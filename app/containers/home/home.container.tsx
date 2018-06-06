@@ -5,7 +5,7 @@ import {observer} from 'mobx-react';
 import HomeComponent from './home.component';
 import { HomeVM } from './home.vm';
 import { peopleService } from '../../services/people/people.service';
-import { Person } from '../../models/models';
+import Person from '../../models/models';
 
 interface HomeContainerProps {
   navigation: NavigationScreenProp<NavigationState>;
@@ -33,10 +33,7 @@ export default class HomeContainer extends Component<HomeContainerProps> {
   componentWillMount() {
     this.vm.setLoading(true);
     peopleService.getPeople()
-      .then(data => console.log(data))
-      .finally(() => {
-        this.vm.setLoading(false);
-      });
+      .finally(() => this.vm.setLoading(false));
   }
 
   onPersonClick(person: Person): void {

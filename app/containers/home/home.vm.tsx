@@ -1,6 +1,6 @@
 import { observable, action, computed } from 'mobx';
 import { peopleStore } from '../../stores/people.store';
-import { Person } from '../../models/models';
+import Person from '../../models/models';
 
 export class HomeVM {
 
