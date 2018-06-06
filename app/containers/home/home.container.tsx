@@ -1,9 +1,13 @@
 import React from 'react'
 import { Component } from 'react';
+import { NavigationScreenProp, NavigationState } from 'react-navigation';
 import HomeComponent from './home.component';
 
-type Props = {};
-export default class HomeContainer extends Component<Props> {
+interface HomeContainerProps {
+  navigation: NavigationScreenProp<NavigationState>,
+}
+
+export default class HomeContainer extends Component<HomeContainerProps> {
 
   static navigationOptions = {
     title: 'Home',
