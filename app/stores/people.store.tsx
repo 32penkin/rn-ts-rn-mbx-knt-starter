@@ -9,4 +9,5 @@ export default class PeopleStore {
   setPeople(people: Person[]) {
     this.people = people;
   }
+
 }

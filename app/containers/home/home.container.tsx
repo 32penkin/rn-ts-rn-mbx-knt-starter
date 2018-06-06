@@ -16,11 +16,14 @@ export default class HomeContainer extends Component<Props> {
     },
   };
 
+  onDetails(): void {
+    this.props.navigation.navigate('Details');
+  }
 
   render() {
     return (
       <HomeComponent
-        onDetails={() => this.props.navigation.navigate('Details')}
+        onDetails={() => this.onDetails()}
       />
     )
   }

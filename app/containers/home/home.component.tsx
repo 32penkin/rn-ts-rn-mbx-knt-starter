@@ -7,10 +7,13 @@ import {
   View
 } from 'react-native';
 
-type Props = {};
-export default class HomeComponent extends Component<Props> {
+interface HomeComponentProps {
+  onDetails: void,
+}
 
-  constructor(props: Props) {
+export default class HomeComponent extends Component<HomeComponentProps> {
+
+  constructor(props: HomeComponentProps) {
     super(props);
   }
 
