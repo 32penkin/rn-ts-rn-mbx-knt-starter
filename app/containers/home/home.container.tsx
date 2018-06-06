@@ -27,7 +27,7 @@ export default class HomeContainer extends Component<HomeContainerProps> {
   render() {
     return (
       <HomeComponent
-        onDetails={() => this.onDetails()}
+        onDetails={(): void => this.onDetails()}
       />
     )
   }
