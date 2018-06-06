@@ -4,6 +4,19 @@ import HomeComponent from './home.component';
 
 type Props = {};
 export default class HomeContainer extends Component<Props> {
+
+  static navigationOptions = {
+    title: 'Home',
+    headerStyle: {
+      backgroundColor: '#f4511e',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  };
+
+
   render() {
     return (
       <HomeComponent
