@@ -7,18 +7,16 @@ import {
   View,
   TouchableHighlight,
 } from 'react-native';
-import {observer} from 'mobx';
 import Person from '../../models/models';
 import PersonComponent from '../../components/person';
+import I18n from '../../core/locales/index';
 
 interface HomeComponentProps {
-  personClick
-    : void;
+  personClick: void;
   people: Person[];
   loading: boolean;
 }
 
-@observer
 export default class HomeComponent extends Component<HomeComponentProps> {
 
   constructor(props: HomeComponentProps) {
@@ -52,7 +50,7 @@ export default class HomeComponent extends Component<HomeComponentProps> {
     const {loading} = this.props;
     return (
       <View style={styles.container}>
-        <Text>Hello From HomeComponent!</Text>
+        <Text>{I18n.t('HOME_TITLE')}</Text>
         {loading && this.renderLoading()}
         {!loading && this.renderPeople()}
       </View>
