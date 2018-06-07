@@ -3,6 +3,8 @@ import { Component } from 'react';
 import { bootstrap } from './styles/types';
 import { Navigator } from './core/navigation/routes';
 
+declare module 'react-native-ui-kitten';
+
 bootstrap();
 
 type Props = {};

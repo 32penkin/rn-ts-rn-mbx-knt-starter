@@ -9,6 +9,7 @@ import Person from '../../models/models';
 
 interface HomeContainerProps {
   navigation: NavigationScreenProp<NavigationState>;
+  vm: HomeVM;
 }
 
 @observer
@@ -27,8 +28,9 @@ export default class HomeContainer extends Component<HomeContainerProps> {
 
   constructor(props: HomeContainerProps) {
     super(props);
-    this.vm = new HomeVM();
   }
+
+  vm: HomeVM = new HomeVM();
 
   componentWillMount() {
     this.vm.setLoading(true);
@@ -43,7 +45,7 @@ export default class HomeContainer extends Component<HomeContainerProps> {
   render() {
     return (
       <HomeComponent
-        personClick={(person) => this.onPersonClick(person)}
+        personClick={(person: Person): void => this.onPersonClick(person)}
         people={this.vm.people}
         loading={this.vm.loading}
       />

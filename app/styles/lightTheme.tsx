@@ -6,7 +6,7 @@ import _ from 'lodash'
 import {RkTheme} from 'react-native-ui-kitten';
 
 
-const isTablet: boolean = true;
+const isTablet: boolean = false;
 // const isIPhoneX: boolean = DeviceInfo.getModel() === 'iPhone X';
 
 export const LightTheme: object = Object.freeze({
@@ -82,7 +82,7 @@ export const LightTheme: object = Object.freeze({
   // isIPhoneX,
   deviceStyle: (phoneStyle: any, tabletsStyle: any) => isTablet ? tabletsStyle : phoneStyle,
   scaleOnlyPhone: (x: number) => isTablet ? x : scale(x),
-  scaleVerticalOnlyPhone: x => isTablet ? x : scaleVertical(x),
-  scaleModerateOnlyPhone: (x, y) => isTablet ? x : scaleModerate(x,y),
+  scaleVerticalOnlyPhone: (x: number) => isTablet ? x : scaleVertical(x),
+  scaleModerateOnlyPhone: (x: number, y: number) => isTablet ? x : scaleModerate(x, y),
   scale, scaleVertical, scaleModerate, guidelineBaseWidth, tabletBaseWidth,
 });

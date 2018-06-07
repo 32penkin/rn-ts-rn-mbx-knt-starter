@@ -1,7 +1,6 @@
 import React from 'react'
 import { Component } from 'react';
 import {
-  StyleSheet,
   Text,
   View
 } from 'react-native';
@@ -40,7 +39,7 @@ export default class DetailsComponent extends Component<Props> {
 
 }
 
-const styles = RkStyleSheet.create(theme => theme.mergeTabletStyles({
+const styles = RkStyleSheet.create((theme: any) => theme.mergeTabletStyles({
   container: {
     flex: 1,
     alignItems: 'center',
