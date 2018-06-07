@@ -6,7 +6,6 @@ import HomeComponent from './home.component';
 import { HomeVM } from './home.vm';
 import { peopleService } from '../../services/people/people.service';
 import Person from '../../models/models';
-import DeviceInfo from 'react-native-device-info';
 
 interface HomeContainerProps {
   navigation: NavigationScreenProp<NavigationState>;
@@ -29,7 +28,6 @@ export default class HomeContainer extends Component<HomeContainerProps> {
   constructor(props: HomeContainerProps) {
     super(props);
     this.vm = new HomeVM();
-    console.log(DeviceInfo.isTablet())
   }
 
   componentWillMount() {

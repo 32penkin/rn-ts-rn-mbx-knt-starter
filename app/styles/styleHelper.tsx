@@ -1,7 +1,8 @@
-import DeviceInfo from 'react-native-device-info';
+// import DeviceInfo from 'react-native-device-info';
 import {Platform} from 'react-native';
 
-const AppbarHeight: number = DeviceInfo.isTablet() ? 42 : 36;
+// const AppbarHeight: number = DeviceInfo.isTablet() ? 42 : 36;
+const AppbarHeight: number = 36;
 const StatusbarHeight: number = Platform.OS === 'ios' ? 0 : 20;
 const HeaderHeight: number = AppbarHeight + StatusbarHeight;
 const VisibleArea: number = HeaderHeight + 49;

@@ -48,7 +48,7 @@ const styles = RkStyleSheet.create(theme => theme.mergeTabletStyles({
     backgroundColor: theme.colors.danger,
   },
 }, {
-  content: {
+  container: {
     flex: 1,
     alignItems: 'center',
     marginTop: 50,

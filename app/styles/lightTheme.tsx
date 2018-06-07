@@ -1,13 +1,13 @@
 import {Colors} from './colors';
 import {Fonts} from './fonts';
 import {scale, scaleVertical, scaleModerate, guidelineBaseWidth, tabletBaseWidth} from '../core/utils/scale';
-import DeviceInfo from 'react-native-device-info';
+// import DeviceInfo from 'react-native-device-info';
 import _ from 'lodash'
 import {RkTheme} from 'react-native-ui-kitten';
 
 
-const isTablet: boolean = DeviceInfo.isTablet();
-const isIPhoneX: boolean = DeviceInfo.getModel() === 'iPhone X';
+const isTablet: boolean = true;
+// const isIPhoneX: boolean = DeviceInfo.getModel() === 'iPhone X';
 
 export const LightTheme: object = Object.freeze({
   colors: {
@@ -79,7 +79,7 @@ export const LightTheme: object = Object.freeze({
   },
 
   isTablet,
-  isIPhoneX,
+  // isIPhoneX,
   deviceStyle: (phoneStyle: any, tabletsStyle: any) => isTablet ? tabletsStyle : phoneStyle,
   scaleOnlyPhone: (x: number) => isTablet ? x : scale(x),
   scaleVerticalOnlyPhone: x => isTablet ? x : scaleVertical(x),
