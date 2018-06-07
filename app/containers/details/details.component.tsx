@@ -5,6 +5,7 @@ import {
   Text,
   View
 } from 'react-native';
+import {RkButton, RkStyleSheet} from 'react-native-ui-kitten';
 import Person from '../../models/models';
 
 type Props = {
@@ -16,6 +17,14 @@ export default class DetailsComponent extends Component<Props> {
     super(props);
   }
 
+  renderButton() {
+    return (
+      <View>
+        <RkButton>Click me!</RkButton>
+      </View>
+    )
+  }
+
   render() {
     const {person} = this.props;
     return (
@@ -24,16 +33,25 @@ export default class DetailsComponent extends Component<Props> {
         <Text>Gender: {person.gender}</Text>
         <Text>Height: {person.height}</Text>
         <Text>Mass: {person.mass}</Text>
+        {this.renderButton()}
       </View>
     );
   }
 
 }
 
-const styles = StyleSheet.create({
+const styles = RkStyleSheet.create(theme => theme.mergeTabletStyles({
   container: {
     flex: 1,
     alignItems: 'center',
     marginTop: 50,
-  }
-});
+    backgroundColor: theme.colors.danger,
+  },
+}, {
+  content: {
+    flex: 1,
+    alignItems: 'center',
+    marginTop: 50,
+    backgroundColor: theme.colors.success,
+  },
+}, true));

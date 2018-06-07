@@ -1,7 +1,6 @@
 import React from 'react'
 import { Component } from 'react';
 import {
-  Button,
   StyleSheet,
   Text,
   View,
@@ -33,7 +32,7 @@ export default class HomeComponent extends Component<HomeComponentProps> {
 
   renderPerson(person: Person) {
     return (
-      <TouchableHighlight key={person.name} onPress={() => this.props.personClick(person)} >
+      <TouchableHighlight key={person.name} onPress={(): void => this.props.personClick(person)} >
         <PersonComponent person={person} />
       </TouchableHighlight>
     );
