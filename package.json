@@ -19,7 +19,8 @@
     "react-native-device-info": "^0.21.5",
     "react-native-i18n": "^2.0.12",
     "react-native-ui-kitten": "^3.0.1",
-    "react-navigation": "^2.2.0"
+    "react-navigation": "^2.2.0",
+    "realm": "^2.8.1"
   },
   "devDependencies": {
     "@types/react": "^16.3.16",
