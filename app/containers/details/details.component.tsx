@@ -29,9 +29,8 @@ export default class DetailsComponent extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text>Name: {person.name}</Text>
-        <Text>Gender: {person.gender}</Text>
-        <Text>Height: {person.height}</Text>
-        <Text>Mass: {person.mass}</Text>
+        <Text>Username: {person.username}</Text>
+        <Text>Email: {person.email}</Text>
         {this.renderButton()}
       </View>
     );
