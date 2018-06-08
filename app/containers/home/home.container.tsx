@@ -42,12 +42,30 @@ export default class HomeContainer extends Component<HomeContainerProps> {
     this.props.navigation.navigate('Details', {person: person});
   }
 
+  onCreateUser() {
+    const user = {
+      id: Math.floor((Math.random() * 100) + 1),
+      name: Math.random().toString(36).substring(7),
+      username: Math.random().toString(36).substring(7),
+      email: Math.random().toString(36).substring(7),
+    };
+    peopleService.createUser(user);
+  }
+
+  onShowUsers() {
+    peopleService.getAllUsers()
+      .then(data => console.log(data))
+      .catch(err => console.log(err));
+  }
+
   render() {
     return (
       <HomeComponent
         personClick={(person: Person): void => this.onPersonClick(person)}
         people={this.vm.people}
         loading={this.vm.loading}
+        createUser={() => this.onCreateUser()}
+        showUsers={() => this.onShowUsers()}
       />
     )
   }

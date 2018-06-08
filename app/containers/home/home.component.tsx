@@ -6,12 +6,15 @@ import {
   View,
   TouchableHighlight,
 } from 'react-native';
+import { RkButton } from 'react-native-ui-kitten';
 import Person from '../../models/models';
 import PersonComponent from '../../components/person';
 import I18n from '../../core/locales/index';
 
 interface HomeComponentProps {
   personClick: void;
+  createUser: void;
+  showUsers: void;
   people: Person[];
   loading: boolean;
 }
@@ -45,10 +48,34 @@ export default class HomeComponent extends Component<HomeComponentProps> {
     }
   }
 
+  renderCreate() {
+    return (
+      <RkButton
+        style={styles.button}
+        onPress={this.props.createUser}
+      >
+        Create User
+      </RkButton>
+    )
+  }
+
+  renderShow() {
+    return (
+      <RkButton
+        style={styles.button}
+        onPress={this.props.showUsers}
+      >
+        Show Users
+      </RkButton>
+    )
+  }
+
   render() {
     const {loading} = this.props;
     return (
       <View style={styles.container}>
+        {this.renderCreate()}
+        {this.renderShow()}
         <Text>{I18n.t('HOME_TITLE')}</Text>
         {loading && this.renderLoading()}
         {!loading && this.renderPeople()}
@@ -67,5 +94,8 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'blue',
+  },
+  button: {
+    marginBottom: 14,
   }
 });

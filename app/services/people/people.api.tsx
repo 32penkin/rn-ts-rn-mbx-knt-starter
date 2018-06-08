@@ -1,9 +1,9 @@
 import { http } from '../../core/http/http';
 import { Person } from '../../models/models';
 
-class PeopleApi {
+export class PeopleApi {
 
-  getPeople(): Promise<Person[]> {
+  getAllUsers(): Promise<Person[]> {
     return http.get('/users')
       .then(res => {
         return res.data;
@@ -11,5 +11,3 @@ class PeopleApi {
   }
 
 }
-
-export const peopleApi: PeopleApi = new PeopleApi();
