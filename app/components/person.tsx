@@ -1,7 +1,7 @@
 import React from 'react'
 import { Component } from 'react';
 import { Text } from 'react-native';
-import { Person } from '../../models/models';
+import { Person } from '../models/models';
 
 interface PersonComponentProps {
   person: Person;
